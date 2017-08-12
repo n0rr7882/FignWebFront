@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	link(rel="stylesheet", href="/stylesheets/item.css")
+	#contents(style="visibility:hidden;opacity:0")
+		nav#nav
+			.fign.fign-logo-small
+			#tabs
+				.wrapper
+					a#tab-familys.tab.active(href="/families")
+						.img
+					a#tab-person.tab(href="/user")
+						.img
+					a#tab-user.tab(href="/profile")
+						.img
+		.main-layout
+			- for(var i in data)
+				a(href="/status/"+data[i].userID)
+					.item
+						.profile-image(style="background-image:url('/images/user-default.png')")
+						.item-info
+							h1.item-name #{data[i].name}
+							.status-image(style="background-image:url('/images/status-studying.png')")
+							.status-time #{data[i].startTime} - #{data[i].endTime}

@@ -1,0 +1,32 @@
+.item {
+    height: 100px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: white;
+    color: #49576D;
+    padding: 10px;
+}
+.item .profile-image {
+    background-position: center;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    float: left;
+    border-radius: 10px;
+}
+.item .item-info {
+    margin-left: 90px;
+    padding: 5px;
+}
+.item .item-info .status-image {
+    background-position: center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.item .item-info .item-name {
+    font-size: 1.5rem;
+}

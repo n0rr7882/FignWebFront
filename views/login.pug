@@ -4,14 +4,15 @@ block content
 	#contents(style="visibility:hidden;opacity:0")
 		.login-layout
 			.fign.fign-in
-			form
-				input(type="text", placeholder="아이디")
-				input(type="password", placeholder="비밀번호")
-				button(type="submit") 로그인
+			form#login-form
+				input(type="text", name="id", placeholder="아이디")
+				input(type="password", name="password" placeholder="비밀번호")
+				button(id="submit", type="button") 로그인
+			script(src="/javascripts/login.js")
 			hr
 			a.b.ta-center(href="#")
-				i.fa.fa-info-circle(aria-hidden="true")
-				|  회원가입
-				| 
-				i.fa.fa-info-circle(aria-hidden="true")
+				.info-icon
 				|  비밀번호를 잊어버리셨나요?
+			a.b.ta-center(href="#")
+				.info-icon
+				|  아직 회원이 아니신가요?

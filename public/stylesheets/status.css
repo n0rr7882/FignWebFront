@@ -1,0 +1,80 @@
+.user-top {
+    background-color: white;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+}
+.user-top .user-status-image {
+    width: 220px;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 110px;
+}
+.user-top .name {
+    margin: 30px 30px 30px 30px;
+    font-size: 1.5rem;
+}
+
+.user-bottom {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+.user-top .icon-clock {
+    width: 35px;
+    height: 35px;
+    background-position: center;
+    background-image: url('/images/icon-clock.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 10px;
+}
+
+.user-top .icon-location {
+    width: 35px;
+    height: 35px;
+    background-position: center;
+    background-image: url('/images/icon-location.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 10px;
+}
+
+.status {
+    font-size: 1.2rem
+}
+.item {
+    margin: 10px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.icon-user {
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid white;
+    float: left;
+    margin: 10px;
+}
+.item-info {
+    padding: 20px;
+}
+.item-info .name {
+    font-size: 1.2rem;
+}
+.item-input {
+    padding: 10px;
+}
+.form {
+    height: 135px;
+}

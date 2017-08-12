@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/status.css")
+    #contents(style="visibility:hidden;opacity:0")
+        nav#nav
+            .fign.fign-logo-small
+            #tabs
+                .wrapper
+                    a#tab-familys.tab.active(href="/families")
+                        .img
+                    a#tab-person.tab(href="/user")
+                        .img
+                    a#tab-user.tab(href="/profile")
+                        .img
+        .main-layout
+            .user-top
+                .user-status-image(style="background-image:url('/images/status-studying.png')")
+                h1.name.ta-center 아빠
+                table
+                    tbody
+                        tr
+                            td
+                                .icon-clock
+                            td.status 18:00 - 18:18
+                        tr
+                            td
+                                .icon-location
+                            td.status 강남구 ㅁㄴㅇ휴ㅜㅎㅈㄱㅅㄷㄴㄹ
+            .user-bottom
+                .item
+                    .icon-user(style="background-image:url('/images/user-default.png')")
+                    .item-info
+                        h1.name 네임
+                        p.comment 코멘트다아아ㅏ아아아
+                .item
+                    .icon-user(style="background-image:url('/images/user-default.png')")
+                    .item-info
+                        h1.name 네임
+                        p.comment 코멘트다아아ㅏ아아아
+                form.item.form
+                    .item-input
+                        input(type="text", name="comment", placeholder="댓글 입력")
+                        button(type="button") 등록

@@ -36,8 +36,17 @@ body {
   padding: 0 20px 20px 20px;
 }
 
+#nav {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #49576D;
+}
+
 .login-layout { padding-top: calc((100vh - 500px) / 2) }
 .register-layout { padding-top: calc((100vh - 600px) / 2) }
+.main-layout { margin-top: 170px; padding-top: 10px }
 
 .fign {
   background-size: contain;
@@ -63,8 +72,63 @@ body {
   height: 100px;
   width: 200px;
 }
+.fign-logo-small {
+  background-image: url('/images/fign.png');
+  height: 50px;
+  width: 100px;
+}
 
-input, button {
+.info-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-image: url('/images/info.png');
+  background-size: cover;
+}
+
+#tabs {
+  height: 60px;
+  width: 100vw;
+  background-color: white;
+  z-index: 9;
+}
+
+.wrapper {
+  max-width: 480px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tab {
+  width: 100%;
+  z-index: 99;
+  border-bottom: 3px solid white;
+  padding: 10px;
+}
+.active {
+  border-bottom: 3px solid #49576D;
+}
+.img {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+#tab-familys > .img { background-image: url('/images/familys.png') }
+#tab-person > .img { background-image: url('/images/person.png') }
+#tab-user > .img { background-image: url('/images/user.png') }
+#tab-familys:hover > .img { background-image: url('/images/familys-clicked.png') }
+#tab-person:hover > .img { background-image: url('/images/person-clicked.png') }
+#tab-user:hover > .img { background-image: url('/images/user-clicked.png') }
+
+input, button, select {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
   display: block;
   width: calc(100% - 20px);
   margin: 10px;
@@ -73,7 +137,7 @@ input, button {
   outline: none;
 }
 
-input {
+input, select {
   border-radius: 10px;
   background-color: #C6D6DC;
 }
@@ -93,3 +157,4 @@ button:hover {
 .h-100p { height: 100% }
 .ta-center { text-align: center }
 .b { display: block }
+.bg-white { background-color: white }

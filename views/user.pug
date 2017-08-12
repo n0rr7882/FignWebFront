@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/user.css")
+    #contents(style="visibility:hidden;opacity:0")
+        nav#nav
+            .fign.fign-logo-small
+            #tabs
+                .wrapper
+                    a#tab-familys.tab(href="/families")
+                        .img
+                    a#tab-person.tab.active(href="/user")
+                        .img
+                    a#tab-user.tab(href="/profile")
+                        .img
+        form#status-form.main-layout
+            .user-top
+                .user-status-image(style="background-image:url('/images/status-studying.png')")
+                select.select-status(name="status")
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+                    option(value="4") 4
+                    option(value="5") 5
+                    option(value="6") 6
+                    option(value="7") 7
+            .user-bottom
+                br
+                .icon-clock
+                .wrapper
+                    select.select-status(name="startTime")
+                        - for(var i = 1; i <= 24; i++)
+                            option(value="#{i}") #{i}시
+                    select.select-status(name="endTime")
+                        - for(var i = 1; i <= 24; i++)
+                            option(value="#{i}") #{i}시
+                .icon-location
+                .wrapper
+                    input(type="text", name="location")
+                button(id="submit", type="button") 확인

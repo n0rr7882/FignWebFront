@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/profile.css")
+    #contents(style="visibility:hidden;opacity:0")
+        nav#nav
+            .fign.fign-logo-small
+            #tabs
+                .wrapper
+                    a#tab-familys.tab(href="/families")
+                        .img
+                    a#tab-person.tab(href="/user")
+                        .img
+                    a#tab-user.tab.active(href="/profile")
+                        .img
+        form#profile-form.main-layout
+            .user-top
+                #upload-image.user-profile-image(style="background-image:url('/images/user-default.png')")
+                input#upload-button(type="file", accept="image/*", onchange="readURL(this);")
+                script(src="/javascripts/profile-image.js")
+            .user-bottom
+                br
+                .wrapper
+                    input(type="password", name="password", placeholder="아이디")
+                .wrapper
+                    input(type="password", name="password", placeholder="비밀번호")
+                .wrapper
+                    input(type="text", name="familyKey", placeholder="가족코드")
+                button(id="submit", type="button") 확인
