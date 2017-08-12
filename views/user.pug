@@ -14,27 +14,29 @@ block content
                     a#tab-user.tab(href="/profile")
                         .img
         form#status-form.main-layout
+            input(type="hidden", name="id", value=userId)
             .user-top
-                .user-status-image(style="background-image:url('/images/status-studying.png')")
-                select.select-status(name="status")
-                    option(value="1") 1
-                    option(value="2") 2
-                    option(value="3") 3
-                    option(value="4") 4
-                    option(value="5") 5
-                    option(value="6") 6
-                    option(value="7") 7
+                #status-image.user-status-image(style="background-image:url('/images/집.png')")
+                select#status.select-status(name="imagename", onChange="setImage()")
+                    option(value="집") 집
+                    option(value="술") 회식중
+                    option(value="이동중") 운전중
+                    option(value="노래방") 여가중
+                    option(value="쇼핑") 쇼핑중
+                    option(value="공부") 공부중
+                    option(value="카페") 휴식중
+                script(src="/javascripts/status-image.js")
             .user-bottom
-                br
                 .icon-clock
                 .wrapper
-                    select.select-status(name="startTime")
+                    select.select-status(name="starttime")
                         - for(var i = 1; i <= 24; i++)
-                            option(value="#{i}") #{i}시
-                    select.select-status(name="endTime")
+                            option(value=`${i}:00`) #{i}:00
+                    select.select-status(name="endtime")
                         - for(var i = 1; i <= 24; i++)
-                            option(value="#{i}") #{i}시
+                            option(value=`${i}:00`) #{i}:00
                 .icon-location
                 .wrapper
-                    input(type="text", name="location")
-                button(id="submit", type="button") 확인
+                    input(type="text", name="name")
+                button#submit(type="button") 확인
+        script(src="/javascripts/user.js")

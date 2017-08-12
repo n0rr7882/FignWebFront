@@ -102,7 +102,50 @@ router.get('/families', (req, res) => {
 
 router.get('/status/:userId', (req, res) => {
   if (req.session.userId) {
-    res.render('status');
+    var headers = {
+      'Content-Type': 'text/html'
+    };
+    var op = {
+      hostname: 'n0rr.iptime.org',
+      port: 4000,
+      path: `/status/${req.params.userId}`,
+      method: 'GET',
+      headers: headers
+    }
+    var postReq = http.request(op, (postRes) => {
+      postRes.setEncoding('utf8');
+      var serverData = '';
+      postRes.on('data', (chunk) => {
+        serverData += chunk;
+      });
+      postRes.on('end', () => {
+        var result = JSON.parse(serverData);
+        var headers = {
+          'Content-Type': 'text/html'
+        };
+        var op2 = {
+          hostname: 'n0rr.iptime.org',
+          port: 4000,
+          path: `/comment/${req.params.userId}`,
+          method: 'GET',
+          headers: headers
+        }
+        var postReq2 = http.request(op2, (postRes2) => {
+          postRes2.setEncoding('utf8');
+          var serverData2 = '';
+          postRes2.on('data', (chunk) => {
+            serverData2 += chunk;
+          });
+          postRes2.on('end', () => {
+            var result2 = JSON.parse(serverData2);
+            console.log(result2);
+            res.render('status', { data: result, comm: result2 });
+          });
+        });
+        postReq2.end();
+      });
+    });
+    postReq.end();
   } else {
     res.send(`<script>alert('로그인 먼저 해주세요!');location.href='/login'</script>`);
   }
@@ -110,7 +153,7 @@ router.get('/status/:userId', (req, res) => {
 
 router.get('/user', (req, res) => {
   if (req.session.userId) {
-    res.render('user');
+    res.render('user', { userId: req.session.userId });
   } else {
     res.send(`<script>alert('로그인 먼저 해주세요!');location.href='/login'</script>`);
   }
