@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	#contents
+	#contents(style="visibility:hidden;opacity:0")
 		.login-layout
 			.fign.fign-in
 			form
@@ -10,5 +10,8 @@ block content
 				button(type="submit") 로그인
 			hr
 			a.b.ta-center(href="#")
+				i.fa.fa-info-circle(aria-hidden="true")
+				|  회원가입
+				| 
 				i.fa.fa-info-circle(aria-hidden="true")
 				|  비밀번호를 잊어버리셨나요?

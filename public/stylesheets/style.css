@@ -31,6 +31,7 @@ body {
 }
 
 #contents { 
+  transition: visibility 0s, opacity 0.5s linear;
   max-width: 480px;
   padding: 0 20px 20px 20px;
 }
