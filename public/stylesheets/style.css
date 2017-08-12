@@ -1,8 +1,94 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+  transition: background 0.3s;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: "Noto Sans KR", sans-serif;
+  line-height: 150%;
+  font-size: 100%;
 }
 
 a {
-  color: #00B7FF;
+	text-decoration: none;
+	color: white;
 }
+
+hr {
+  border: none;
+  background: none;
+  border-bottom: 1px solid white;
+  margin: 25px 10px 25px 10px;
+}
+
+body {
+  background-color: #8DACBB;
+  min-height: 100vh;
+  border: 1px solid #8DACBB;
+}
+
+#contents { 
+  max-width: 480px;
+  padding: 0 20px 20px 20px;
+}
+
+.login-layout { padding-top: calc((100vh - 500px) / 2) }
+.register-layout { padding-top: calc((100vh - 600px) / 2) }
+
+.fign {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.fign-in {
+  background-image: url('/images/fign-in.png');
+  height: 200px;
+  width: 150px;
+}
+
+.fign-up {
+  background-image: url('/images/fign-up.png');
+  height: 200px;
+  width: 150px;
+}
+.fign-logo {
+  background-image: url('/images/fign.png');
+  height: 100px;
+  width: 200px;
+}
+
+input, button {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+input {
+  border-radius: 10px;
+  background-color: #C6D6DC;
+}
+
+button {
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  color: #8DACBB;
+}
+
+button:hover {
+  background-color: #49576D;
+  color: #FFFFFF;
+}
+
+.w-100p { width: 100% }
+.h-100p { height: 100% }
+.ta-center { text-align: center }
+.b { display: block }
